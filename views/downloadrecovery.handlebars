@@ -1,0 +1,33 @@
+{{#if user}}
+  <div class="jumbotron">
+    <h3><a href="/"><div class="panel-default">Hack-free cloud</div></a></h3>
+  </div>
+  <div class="panel">
+    <p>Download your recovery file!</p>
+    <form name="download" method="get" action="/downloadRec">
+      <button class="btn btn-primary btn-sm" type="submit" id="download">Download recovery file</button>
+    </form>
+  </div>
+  <br>
+  <p2>Upload to GDrive, Dropbox etc (To be added)</p2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>Username: {{user.username}}</p>
+      <p>Avatar: <img src="{{user.avatar}}"/></p>
+    </div>
+  </div>
+  <footer><b>Warning: Without downloading the recovery file, you wont be able to restore your files in case of password loss, and this cannot be downloaded later</b></footer>
+
+{{else}}
+  <div class="jumbotron">
+    <h3>Hack-free cloud</h3>
+    <p>Sign in and view your profile!</p>
+    <p>
+      <a href="/signin" class="btn btn-primary btn-lg" role="button">
+        <span class="glyphicon glyphicon-user"></span>
+        Sign in!
+      </a>
+    </p>
+  </div>
+{{/if}}
